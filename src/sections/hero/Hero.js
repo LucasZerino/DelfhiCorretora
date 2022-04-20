@@ -71,6 +71,14 @@ class Hero extends React.Component {
                 font-size: 30px;
                 line-height: 20px;
             }
+            @media (max-width:500px) {
+                position: relative;
+                top: -10px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 400px;
+                font-size: 25px;
+            }
         `
 
         const Heading2 = styled.h2`
@@ -89,6 +97,14 @@ class Hero extends React.Component {
             }
             @media (max-width:1250px) {
                 font-size: 20px;
+            }
+            @media (max-width:500px) {
+                position: relative;
+                top: -10px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 400px;
+                font-size: 15px;
             }
         `
 
