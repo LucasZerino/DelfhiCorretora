@@ -2,6 +2,7 @@ import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 import Typewriter from 'typewriter-effect'
+import Zap from './imgs/zap1.png'
 
 
 class Hero extends React.Component {
@@ -61,7 +62,7 @@ class Hero extends React.Component {
             font-size: 60px;
             font-family: Teko;
             line-height: 70px;
-            color: #fff;
+            color: #e8590c;
             font-weight: 400;
             text-transform: uppercase;
             @media (min-width:1700px) { 
@@ -73,7 +74,7 @@ class Hero extends React.Component {
             }
             @media (max-width:500px) {
                 position: relative;
-                top: -10px;
+                top: -50px;
                 left: 50%;
                 transform: translateX(-50%);
                 width: 400px;
@@ -86,7 +87,7 @@ class Hero extends React.Component {
             color: #fff;
             font-weight: 800;
             text-transform: uppercase;
-            background: #e8590c;
+            background: #fff;
            -webkit-background-clip: text;
            -webkit-text-fill-color: transparent;
             @media (max-width:1700px) { 
@@ -100,7 +101,7 @@ class Hero extends React.Component {
             }
             @media (max-width:500px) {
                 position: relative;
-                top: -10px;
+                top: -50px;
                 left: 50%;
                 transform: translateX(-50%);
                 width: 400px;
@@ -135,7 +136,19 @@ class Hero extends React.Component {
             display: flex;
             flex-direction: column;
             text-align: center;
-            a{
+            .zap{
+                position: fixed;
+                bottom: 0;
+                margin-bottom: 30px;
+                right: 0;
+                margin-right: 30px;
+                z-index: 999;
+            }
+            .zapimg{
+                width: 80px;
+                height: 80px;
+            }
+            .simular{
                 position: relative;
                 display: inline-block;
                 font-size: 40px;
@@ -153,7 +166,7 @@ class Hero extends React.Component {
                 transform: translateX(-50%);
                 top: -40px;
             }
-            a:hover{
+            .simular:hover{
                 color: #e85a0c;
                 background: #fff;
             }
@@ -195,6 +208,12 @@ class Hero extends React.Component {
                 flex-direction: column;
                 }
             }
+            @media (max-width: 500px){
+                .zapimg{
+                    width: 60px;
+                    height: 60px;
+                }
+            }
         `
 
         const Separator = styled.div`
@@ -213,8 +232,11 @@ class Hero extends React.Component {
             @media (max-width:1250px) {
                 width: 500px;
             }
-            @media (max-width:767px) {
-              
+            @media (max-width:500px) {
+                position: relative;
+                top: -50px;
+                width: 150px;
+                font-size: 15px;
             }
         `
 
@@ -223,6 +245,7 @@ class Hero extends React.Component {
                     <Overlay style={{height: `${this.state.width > 500 ? this.state.height : 350}px`}}>
                         
                             <Content>
+                            <a className='zap' href='https://api.whatsapp.com/send?phone=558432111000'><img className='zapimg' src={Zap}/></a> 
                                 <div className='sep'>
                                     <div className='sep1'>
                                         <div className='ceter'>
@@ -255,7 +278,7 @@ class Hero extends React.Component {
                                         </div>
                                     </div>
                                 </div>
-                                <a href="#SIMULAR">SIMULAR AGORA</a>
+                                <a className='simular' href="#SIMULAR">SIMULAR AGORA</a>
                                 
                             </Content>
                   
